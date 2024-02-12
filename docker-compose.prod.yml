@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  web:
+    build:
+        context: .
+        dockerfile: Dockerfile.prod
+    volumes:
+      - media_volume:/app/media
+      - hpd_alfa_be_tus_hpdrones_media_volume:/app/media/files/hpdrones/completed
+    restart: always
+    env_file:
+      - ./.env.production
+    expose:
+      - 1080
+    networks:
+      - backend
+
+networks:
+  backend:
+   external: true
+
+volumes:
+  media_volume:
+  hpd_alfa_be_tus_hpdrones_media_volume:
+    external: true

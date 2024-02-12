@@ -1,0 +1,23 @@
+# Use an official Node runtime as a parent image
+FROM node:lts-bullseye
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the package.json and yarn.lock or package-lock.json files to the container
+COPY package*.json ./
+
+
+# Copy the rest of the application files to the container
+COPY . .
+
+# Install app dependencies
+RUN yarn install
+
+# Make port 1080 available
+EXPOSE 1080
+
+# Run the application in production mode
+CMD ["yarn", "qtus"]
+
+

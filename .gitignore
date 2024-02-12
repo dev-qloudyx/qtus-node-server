@@ -1,0 +1,7 @@
+# MacOS
+.DS_Store
+# Python bytecode
+__pycache__
+
+# local environment variables
+.env*

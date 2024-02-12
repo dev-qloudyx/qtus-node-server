@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "workspaces": ["qtus"],
+  "scripts": {
+    "qtus": "yarn workspace qtus start"
+  }
+}
